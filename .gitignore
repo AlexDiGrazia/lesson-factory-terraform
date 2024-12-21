@@ -26,3 +26,4 @@ terraform.rc
 *.pub
 
 terraform-commands.txt
+commands.txt

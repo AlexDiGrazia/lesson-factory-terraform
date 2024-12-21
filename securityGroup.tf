@@ -67,3 +67,17 @@ resource "aws_vpc_security_group_ingress_rule" "allow_tcp_traffic_db_private" {
   ip_protocol = "tcp"
   referenced_security_group_id = aws_security_group.private_ec2_SG.id
 }
+
+resource "aws_security_group" "bastion_host_sg" {
+  name= "${var.app_name} Bastion Host Security Group"
+  description= "Bastion Host SG"
+  vpc_id      = aws_vpc.main.id
+
+  tags = {
+    Name = "${var.app_name}-bastion-sg"
+  }
+}
+
+resource "aws_vpc_security_group_ingress_rule" "allow_tcp_traffic_db_bastion" {
+  
+}
